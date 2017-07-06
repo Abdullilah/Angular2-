@@ -5,8 +5,9 @@ import {Comp1Component} from "./comp1.component";
 @Component({
     selector: 'my-app',
     template: `
-        <h1>This is the main component</h1>
-        <h2>This value is a variable from the main Comp: <span class="active">{{newVar}}</span></h2>
+        <h1>This is the <span [class.activated]="inputValue.value === 'yes'">main component</span></h1>
+        <h2>This value is a variable from the main Comp: <span class="activated">{{newVar}}</span></h2>
+        <span>Is it good: </span><input type="text" #inputValue (keyup)="0">
         <comp1 [info]=info></comp1>
     `,
   directives: [Comp1Component],
