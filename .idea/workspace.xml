@@ -38,22 +38,13 @@
       <file leaf-file-name="comp1.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/comp1.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+            <state relative-caret-position="340">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
-                <marker date="1499370292841" expanded="true" signature="223:372" ph="..." />
-                <marker date="1499370292841" expanded="true" signature="260:358" ph="..." />
+                <marker date="1499378872063" expanded="true" signature="223:486" ph="..." />
+                <marker date="1499378872063" expanded="true" signature="286:472" ph="..." />
+                <marker date="1499378872063" expanded="true" signature="515:696" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -243,12 +234,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1499368692309</updated>
-      <workItem from="1499368701360" duration="1574000" />
+      <workItem from="1499368701360" duration="3065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1574000" />
+    <option name="totallyTimeSpent" value="3065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -310,11 +301,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/comp1.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
-            <marker date="1499370292841" expanded="true" signature="223:372" ph="..." />
-            <marker date="1499370292841" expanded="true" signature="260:358" ph="..." />
+            <marker date="1499378872063" expanded="true" signature="223:486" ph="..." />
+            <marker date="1499378872063" expanded="true" signature="286:472" ph="..." />
+            <marker date="1499378872063" expanded="true" signature="515:696" ph="..." />
           </folding>
         </state>
       </provider>
