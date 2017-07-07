@@ -7,7 +7,7 @@ import {Component, Input} from 'angular2/core';
         <h3>Here are the data, called from the main cmoponent</h3>
         
         <ul>
-          <li *ngFor="#obj of info" (click)="eleClicked(obj)">
+          <li *ngFor="#obj of contacts" (click)="eleClicked(obj)">
             <div [class.activatedEle]="obj === selectedItem">Name: {{obj.name}}</div>
             <div>Age: {{obj.age}}</div>
             <div>Email: {{obj.email}}</div>
@@ -22,7 +22,7 @@ import {Component, Input} from 'angular2/core';
   styleUrls: ['../css/style.css']
 })
 export class Comp1Component {
-  @Input() info : Array<{name: string, age: string, email: string, phone: string}> = [];
+  @Input() contacts : Array<{name: string, age: string, email: string, phone: string}> = [];
   public status = false;
   public selectedItem : {};
   eleClicked(objectSel : {}){
