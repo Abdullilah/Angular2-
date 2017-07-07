@@ -8,7 +8,7 @@ import {Component, Input} from 'angular2/core';
         
         <ul>
           <li *ngFor="#obj of info" (click)="eleClicked(obj)">
-            <div>Name: {{obj.name}}</div>
+            <div [class.activatedEle]="obj === selectedItem">Name: {{obj.name}}</div>
             <div>Age: {{obj.age}}</div>
             <div>Email: {{obj.email}}</div>
             <div>Phone: {{obj.phone}}</div>
@@ -18,7 +18,8 @@ import {Component, Input} from 'angular2/core';
           <span>Email: </span><input type="text" [(ngModel)]="selectedItem.email">
           <span>phone: </span><input type="text" [(ngModel)]="selectedItem.phone">
         </div>
-    `
+    `,
+  styleUrls: ['../css/style.css']
 })
 export class Comp1Component {
   @Input() info : Array<{name: string, age: string, email: string, phone: string}> = [];
