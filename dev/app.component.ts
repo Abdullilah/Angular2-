@@ -1,27 +1,30 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Comp1Component} from "./comp1.component";
-import {ContactSevice} from "./contact.service";
-import {Contact} from "./contact";
+import {ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
+import {Comp2Component} from "./comp2.component";
 
 
 @Component({
     selector: 'my-app',
     template: `
-        <comp1 [contacts]=contacts></comp1>
+        <h1>This is Main Component</h1>
+        <header>
+          <nav>
+            <a [routerLink]="['FirstPage']">First Page</a>
+            <a [routerLink]="['SecondPage']">Second Page</a>
+          </nav>
+        </header>
+        <section>
+          <router-outlet></router-outlet>
+        </section>
     `,
-  directives: [Comp1Component],
-  providers: [ContactSevice],
-  styleUrls: ['../css/style.css']
+  directives: [Comp1Component, Comp2Component, ROUTER_DIRECTIVES],
 })
-export class AppComponent implements OnInit{
-  public contacts: Contact[];
-  constructor(private _contactService: ContactSevice){}
-  ngOnInit():any {
-    this.getContacts();
-  }
+@RouteConfig([
+  {path: '/page1', name: 'FirstPage', component: Comp1Component, useAsDefault: true},
+  {path: '/page2', name: 'SecondPage', component: Comp2Component}
+])
+export class AppComponent{
 
-  getContacts(){
-    this._contactService.getContact().then((contacts: Contact[])=> this.contacts = contacts);
-  }
 
 }
