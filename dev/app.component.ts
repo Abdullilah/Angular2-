@@ -1,7 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {Comp1Component} from "./comp1.component";
 import {ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
 import {Comp2Component} from "./comp2.component";
+import {Contact} from "./contact";
+import {ContactSevice} from "./contact.service";
 
 
 @Component({
@@ -19,12 +21,14 @@ import {Comp2Component} from "./comp2.component";
         </section>
     `,
   directives: [Comp1Component, Comp2Component, ROUTER_DIRECTIVES],
+  styleUrls: ['../css/style.css']
 })
+
 @RouteConfig([
   {path: '/page1', name: 'FirstPage', component: Comp1Component, useAsDefault: true},
   {path: '/page2', name: 'SecondPage', component: Comp2Component}
 ])
 export class AppComponent{
 
-
 }
+
