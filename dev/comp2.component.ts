@@ -1,14 +1,14 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ContactSevice} from "./contact.service";
 import {Contact} from "./contact";
-import {Router} from "angular2/router";
+import {Router, RouteParams} from "angular2/router";
 
 @Component({
   selector: 'comp2',
   template: `
         <h1>This is Second Page</h1>
         <form>
-          Name: <input type="text" #nameInput/><br>
+          Name: <input type="text" #nameInput value="{{name}}"/><br>
           Age: <input type="text" #ageInput/><br>
           Phone: <input type="text" #phoneInput/><br>
           Email: <input type="text" #emailInput/><br>
@@ -17,8 +17,12 @@ import {Router} from "angular2/router";
     `,
   providers: [ContactSevice]
 })
-export class Comp2Component {
-  constructor(private _contactService: ContactSevice, private _router: Router){}
+export class Comp2Component implements OnInit{
+  public name = "";
+  ngOnInit():any {
+    this.name = this._routerParams.get('name');
+  }
+  constructor(private _contactService: ContactSevice, private _router: Router, private _routerParams: RouteParams){}
   onAddContact(nameIn, ageIn, phoneIn, emailIn){
     let contact: Contact = {name: nameIn, age: ageIn, email: phoneIn, phone: emailIn};
     this._contactService.insertContact(contact);
