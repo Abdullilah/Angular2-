@@ -11,19 +11,21 @@ import {Router} from "angular2/router";
           <li *ngFor="#obj of contacts">
             <div [class.activatedEle]="obj === selectedItem" 
                  (click)="selectedItemFun(obj)">Name: {{obj.name}}</div>
-            <div>Age: {{obj.age}}</div>
-            <div>Email: {{obj.email}}</div>
-            <div>Phone: {{obj.phone}}</div>
           </li>
         </ul>
-        <button *ngIf="status" (click)="btnClicked()">Modify information</button>
+        <div *ngIf="status" >
+          <div>Age: {{selectedItem.age}}</div>
+          <div>Email: {{selectedItem.email}}</div>
+          <div>Phone: {{selectedItem.phone}}</div>
+          <button (click)="btnClicked()">Modify information</button>
+        </div>
     `,
   providers: [ContactSevice],
   styleUrls: ['../css/style.css']
 })
 export class Comp1Component implements OnInit{
   public contacts: Contact[];
-  public selectedItem: Contact;
+  public selectedItem= {name: "", age: "", email: "", phone: ""};
   public status= false;
   constructor(private _contactService: ContactSevice, private _router: Router){}
   ngOnInit():any {
