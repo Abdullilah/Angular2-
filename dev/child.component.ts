@@ -1,21 +1,20 @@
-import {Component, EventEmitter} from 'angular2/core';
+import {Component} from "angular2/core";
+import {ElementRef} from "angular2/core";
+import {OnInit} from "angular2/core";
+declare var jQuery: any;
 
 @Component({
-  selector: 'childComp',
+  selector: 'my-jquery',
   template: `
-        <h2>This is the Child Component</h2>
-        <p>This text from the Parent Component: {{parentValue}}</p>
-        <input type="text" #childInput (keyup)="onChange(childInput.value)"/>
-    `,
-  inputs: ['parentValue'],
-  outputs: ['childValue']
+        <button>Click me</button>
+    `
 })
+export class jQueryComponent implements OnInit {
+  constructor(private _elRef: ElementRef) {}
 
-export class ChildComponent{
-  parentValue: string;
-  childValue = new EventEmitter<string>();
-  onChange(value: string){
-    this.childValue.emit(value);
+  ngOnInit():any {
+    jQuery(this._elRef.nativeElement).find('button').on('click', function() {
+      alert('It works!');
+    });
   }
 }
-

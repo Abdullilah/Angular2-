@@ -1,17 +1,13 @@
 import {Component} from 'angular2/core';
-import {Comp1Component} from "./comp1.component";
-import {Comp2Component} from "./comp2.component";
+import {jQueryComponent} from "./child.component";
 
 @Component({
-    selector: 'my-app',
-    template: `
-        <h1>Main Component</h1>
-        <comp1></comp1>
-        <comp2></comp2>
+  selector: 'my-app',
+  template: `
+        <my-jquery></my-jquery>
     `,
-    directives: [Comp1Component, Comp2Component]
+  directives: [jQueryComponent]
 })
+export class AppComponent {
 
-export class AppComponent{
 }
-
