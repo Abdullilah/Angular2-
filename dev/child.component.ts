@@ -1,20 +1,21 @@
-import {Component} from "angular2/core";
-import {ElementRef} from "angular2/core";
-import {OnInit} from "angular2/core";
-declare var jQuery: any;
+import {Injectable} from 'angular2/core';
+import {Http} from "angular2/http";
+import {last} from "rxjs/operator/last";
+import 'rxjs/Rx';
 
-@Component({
-  selector: 'my-jquery',
-  template: `
-        <button>Click me</button>
-    `
-})
-export class jQueryComponent implements OnInit {
-  constructor(private _elRef: ElementRef) {}
+@Injectable()
+export class FirebaseService {
 
-  ngOnInit():any {
-    jQuery(this._elRef.nativeElement).find('button').on('click', function() {
-      alert('It works!');
-    });
+  constructor(private _http: Http) {}
+
+  setUser(firstName: string, lastName: string) {
+    const body = JSON.stringify({firstName: firstName, lastName: lastName});
+    return this._http.put('https://vivid-heat-XXX.firebaseIO.com/user.json', body)
+      .map(response => response.json());
+  }
+
+  getUser() {
+    return this._http.get('https://vivid-heat-XXX.firebaseIO.com/user.json')
+      .map(response => response.json());
   }
 }
