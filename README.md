@@ -19,19 +19,30 @@ npm install
 npm start
 ```
 
-branch1: 
+branch1: Add sub component to Main component
 ####
-branch2: 
+branch2: Pass data to sub component, ngIf, ngModle, css style
 ####
-branch3: 
-branch4: 
-branch5: 
-branch6: 
-branch7: 
-branch8: 
-branch9: 
-branch10: 
-branch11: 
-branch12: 
-branch13:
-branch14:
+branch3: Take data from the input field and add class
+####
+branch4: Disabled, constructer, OnInit interface for initial values
+####
+branch5: Services with providers
+####
+branch6: Routing
+####
+branch7: Submit and add data to the dataset array
+####
+branch8: Routting with using Parms to get value from the link
+####
+branch9: Form validation
+####
+branch10: Form validation in different way
+####
+branch11: Input, Output
+####
+branch12: Data Dependency, same data for multi components 
+####
+branch13: jQuery	
+####
+branch14: Http
